@@ -33,7 +33,7 @@ const ShareForm =({ onAddShare }) => {
             shareNumber: parseInt(shareNumber),
             sharePrice: parseFloat(latestSharePrice),
             shareValue: parseInt(shareNumber) * parseFloat(latestSharePrice),
-            shareDate: shareData,
+            shareData: shareData,
         };
 
         onAddShare(newShare);

@@ -45,7 +45,7 @@ app.post('/', async (req, res) => {
             quotes.length
         ).cyan);
         if (quotes[0]) {
-            data = quotes;
+            data = quotes.reverse();
         } else {
             console.log('N/A');
         }
