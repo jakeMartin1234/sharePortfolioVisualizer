@@ -1,34 +1,23 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+import COLORS from "./Colors";
 
-const PieChartComponent = ({ shareList }) => {
-    const COLORS = [
-        '#0088FE', // Blue
-        '#00C49F', // Green
-        '#FFBB28', // Yellow
-        '#FF8042', // Orange
-        '#9A55FF', // Purple
-        '#FF4D6A', // Pink
-        '#00BFFF', // Deep sky blue
-        '#FFA500', // Orange
-        '#00FF7F', // Spring green
-        '#FF1493'  // Deep pink
-    ];
+const PieChartComponent = ({ shareQuantities }) => {
 
-    const width = window.innerWidth * 0.25;
+    const width = window.innerWidth * 0.28;
     const height = width;
 
-    const data = shareList.map((share) => ({
-        value: Math.round(share.shareValue),
-        label: share.shareTicker,
+    const data = Object.keys(shareQuantities).map((share) => ({
+        value: Math.round(shareQuantities[share].sharePrice * shareQuantities[share].shareQuantity),
+        label: share,
     }));
     return (
-        <PieChart width={400} height={400}>
+        <PieChart width={width} height={height}>
             <Pie
                 dataKey="value"
                 data={data}
-                cx={200}
-                cy={200}
+                cx={width/2}
+                cy={height/2}
                 outerRadius={60}
                 fill="#8884d8"
                 label

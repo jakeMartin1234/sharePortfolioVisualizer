@@ -2,7 +2,15 @@ import React from 'react';
 import Stack from 'react-bootstrap/Stack';
 import Card from 'react-bootstrap/Card';
 
-const ShareStackList = ({ shareList }) => {
+const ShareStackList = ({ shareQuantities }) => {
+    const shareList = Object.keys(shareQuantities).map((shareTicker) => {
+            return {
+                shareTicker: shareTicker,
+                shareNumber: shareQuantities[shareTicker].shareNumber,
+                sharePrice: shareQuantities[shareTicker].sharePrice,
+                shareValue: shareQuantities[shareTicker].shareNumber * shareQuantities[shareTicker].sharePrice,
+            }
+        });
     return (
         <Stack gap={3}>
             {shareList.map((share, index) => (

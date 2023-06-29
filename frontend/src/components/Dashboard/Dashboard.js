@@ -18,8 +18,8 @@ import AreaStockValueChart from "./charts/AreaStockValueChart";
             {
  */
 
-const Dashboard = ({shareList}) => {
-    if (shareList.length === 0) {
+const Dashboard = ({shareQuantities, shareHistory}) => {
+    if (shareQuantities.length === 0) {
         return (
             <div>
                 Add shares in "Manager" tab to see visualizations.
@@ -31,12 +31,13 @@ const Dashboard = ({shareList}) => {
                 <Row>
                     <Col xs={4.5}>
                         <GraphCard title={"Share Distribution Graph ($ USD)"}
-                                   chart={<PieChartComponent shareList={shareList} />}
+                                   chart={<PieChartComponent shareQuantities={shareQuantities}/>}
                         />
                     </Col>
                     <Col xs={7.8}>
                         <GraphCard title={"Share Prices In The Past Year ($ USD)"}
-                                   chart={<AreaStockValueChart shareList={shareList} />}
+                                   chart={<AreaStockValueChart shareQuantities={shareQuantities}
+                                                               shareHistory={shareHistory} />}
                         />
                     </Col>
                 </Row>

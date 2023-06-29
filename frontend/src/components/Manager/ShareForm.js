@@ -5,13 +5,17 @@ import {Col, Row} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import axios from 'axios';
 
-const ShareForm =({ onAddShare }) => {
+const ShareForm =({ onAddShare, shareQuantities }) => {
     const [shareTicker, setShareTicker] = useState('');
-    const [shareNumber, setShareNumber] = useState('');
-    const [sharePrice, setSharePrice] = useState('');
+    const [shareQuantity, setShareQuantity] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (Object.keys(shareQuantities).includes(shareTicker)) {
+            setErrorMessage('Share already exists');
+            return;
+        }
 
         const url = `http://localhost:8000`;
         let response = null;
@@ -22,17 +26,22 @@ const ShareForm =({ onAddShare }) => {
                 }
             });
         } catch (error) {
-            console.error(error);
+            console.log(error);
         }
 
         let shareData = response.data.result
+
+        if (Object.keys(shareData).length === 0) {
+            setErrorMessage(`${shareTicker} was not found in the Database`);
+            return;
+        }
         let latestSharePrice = shareData[shareData.length - 1].close;
 
         const newShare = {
             shareTicker: shareTicker,
-            shareNumber: parseInt(shareNumber),
+            shareNumber: parseInt(shareQuantity),
             sharePrice: parseFloat(latestSharePrice),
-            shareValue: parseInt(shareNumber) * parseFloat(latestSharePrice),
+            shareQuantity: parseInt(shareQuantity) * parseFloat(latestSharePrice),
             shareData: shareData,
         };
 
@@ -40,8 +49,8 @@ const ShareForm =({ onAddShare }) => {
 
         // Clear the input fields after submission
         setShareTicker('');
-        setShareNumber('');
-        setSharePrice('');
+        setShareQuantity('');
+        setErrorMessage('');
     };
 
     return (
@@ -62,9 +71,9 @@ const ShareForm =({ onAddShare }) => {
                             <Form.Label>Share Number</Form.Label>
                             <Form.Control
                                 type="number"
-                                value={shareNumber}
+                                value={shareQuantity}
                                 step="1"
-                                onChange={(e) => setShareNumber(e.target.value)}
+                                onChange={(e) => setShareQuantity(e.target.value)}
                                 required
                             />
                         </Form.Group>
@@ -73,6 +82,9 @@ const ShareForm =({ onAddShare }) => {
                         </Button>
                     </Form>
                 </Col>
+                    <p style={{color: 'red'}}>
+                        {errorMessage}
+                    </p>
                 <Col />
 
             </Row>
