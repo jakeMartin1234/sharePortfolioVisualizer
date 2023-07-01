@@ -21,7 +21,7 @@ import WholePortfolioLineChart from "./charts/WholePortfolioLineChart";
  */
 
 const Dashboard = ({shareQuantities, shareHistory}) => {
-    if (shareQuantities.length === 0) {
+    if (shareHistory.length === 0) {
         return (
             <div>
                 Add shares in "Manager" tab to see visualizations.
@@ -31,12 +31,12 @@ const Dashboard = ({shareQuantities, shareHistory}) => {
         return (
             <Container fluid>
                 <Row>
-                    <Col xs={4.5}>
+                    <Col>
                         <GraphCard title={"Share Distribution Graph ($ USD)"}
                                    chart={<PieChartComponent shareQuantities={shareQuantities}/>}
                         />
                     </Col>
-                    <Col xs={7.8}>
+                    <Col>
                         <GraphCard title={"Share Prices In The Past Year ($ USD)"}
                                    chart={<AreaStockValueChart shareQuantities={shareQuantities}
                                                                shareHistory={shareHistory} />}
@@ -51,7 +51,7 @@ const Dashboard = ({shareQuantities, shareHistory}) => {
                         />
                     </Col>
                     <Col>
-                        <GraphCard title={"% Gain/Loss over the past year"}
+                        <GraphCard title={"Portfolio Value Over Past Year ($ USD)"}
                                    chart={<WholePortfolioLineChart shareQuantities={shareQuantities}
                                                                      shareHistory={shareHistory} />}
                         />

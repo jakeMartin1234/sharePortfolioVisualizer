@@ -4,7 +4,7 @@ import COLORS from "./Colors";
 
 const AreaStockValueChart = ({ shareQuantities, shareHistory }) => {
 
-    const width = window.innerWidth * 0.45;
+    const width = window.innerWidth * 0.42;
     const height = width * 0.618;
 
     const gradientIds = Object.keys(shareQuantities).map((elem, index) => `color${elem}`);
