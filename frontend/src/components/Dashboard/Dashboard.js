@@ -4,6 +4,8 @@ import {Col, Row} from "react-bootstrap";
 import PieChartComponent from "./charts/PieChart";
 import GraphCard from "./GraphCard";
 import AreaStockValueChart from "./charts/AreaStockValueChart";
+import GainersAndLosers from "./charts/GainersAndLosers";
+import WholePortfolioLineChart from "./charts/WholePortfolioLineChart";
 
 /*
     This component is the main dashboard component. It is responsible for rendering the charts and surround data.
@@ -40,6 +42,21 @@ const Dashboard = ({shareQuantities, shareHistory}) => {
                                                                shareHistory={shareHistory} />}
                         />
                     </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <GraphCard title={"% Gain/Loss over the past year"}
+                                   chart={<GainersAndLosers shareQuantities={shareQuantities}
+                                                            shareHistory={shareHistory} />}
+                        />
+                    </Col>
+                    <Col>
+                        <GraphCard title={"% Gain/Loss over the past year"}
+                                   chart={<WholePortfolioLineChart shareQuantities={shareQuantities}
+                                                                     shareHistory={shareHistory} />}
+                        />
+                    </Col>
+
                 </Row>
             </Container>
 

@@ -39,9 +39,9 @@ const ShareForm =({ onAddShare, shareQuantities }) => {
 
         const newShare = {
             shareTicker: shareTicker,
-            shareNumber: parseInt(shareQuantity),
+            shareQuantity: parseInt(shareQuantity),
             sharePrice: parseFloat(latestSharePrice),
-            shareQuantity: parseInt(shareQuantity) * parseFloat(latestSharePrice),
+            shareValue: parseInt(shareQuantity) * parseFloat(latestSharePrice),
             shareData: shareData,
         };
 

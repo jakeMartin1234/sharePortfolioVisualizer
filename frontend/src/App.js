@@ -13,7 +13,8 @@ const App = () => {
         Format: JSON {
             "${shareTicker}": JSON {
                 sharePrice: Float,
-                shareQuantity: Integer
+                shareQuantity: Integer,
+                shareValue: Float,
             }
         }
         shareHistory: is a list of share data history
@@ -42,6 +43,7 @@ const App = () => {
             [newShare.shareTicker]: {
                 sharePrice: newShare.sharePrice,
                 shareQuantity: newShare.shareQuantity,
+                shareValue: newShare.shareValue,
             },
         });
 

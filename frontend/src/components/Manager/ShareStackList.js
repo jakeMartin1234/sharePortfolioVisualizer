@@ -6,9 +6,9 @@ const ShareStackList = ({ shareQuantities }) => {
     const shareList = Object.keys(shareQuantities).map((shareTicker) => {
             return {
                 shareTicker: shareTicker,
-                shareNumber: shareQuantities[shareTicker].shareNumber,
-                sharePrice: shareQuantities[shareTicker].sharePrice,
-                shareValue: shareQuantities[shareTicker].shareNumber * shareQuantities[shareTicker].sharePrice,
+                shareNumber: shareQuantities[shareTicker].shareQuantity,
+                sharePrice: shareQuantities[shareTicker].sharePrice.toFixed(2),
+                shareValue: Math.round(shareQuantities[shareTicker].shareValue),
             }
         });
     return (
