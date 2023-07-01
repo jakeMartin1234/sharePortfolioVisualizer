@@ -32,7 +32,7 @@ const Dashboard = ({shareQuantities, shareHistory}) => {
             <Container fluid>
                 <Row>
                     <Col>
-                        <GraphCard title={"Share Distribution Graph ($ USD)"}
+                        <GraphCard title={"Portfolio Composition ($ USD)"}
                                    chart={<PieChartComponent shareQuantities={shareQuantities}/>}
                         />
                     </Col>

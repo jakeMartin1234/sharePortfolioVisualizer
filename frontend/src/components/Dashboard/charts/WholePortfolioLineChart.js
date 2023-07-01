@@ -14,7 +14,7 @@ const WholePortfolioLineChart = ({ shareQuantities, shareHistory }) => {
         let total = 0;
         Object.keys(shareHistory[i]).forEach((share) => {
             if (share !== "date"){
-                total += shareHistory[i][share].close * shareHistory[i][share].close;
+                total += shareHistory[i][share].close * shareQuantities[share].shareQuantity;
             }
         });
         dailyShareValue.push(total);
@@ -25,7 +25,7 @@ const WholePortfolioLineChart = ({ shareQuantities, shareHistory }) => {
     for (let i = 0; i < shareHistory.length; i++) {
         if (i % 5 === 0) {
             data.push({
-                portfolio: dailyShareValue[i],
+                portfolio: Math.round(dailyShareValue[i]),
                 name: shareHistory[i].date,
             });
         }

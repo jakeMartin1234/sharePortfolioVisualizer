@@ -19,7 +19,7 @@ const ShareStackList = ({ shareQuantities }) => {
                         <Card.Body>
                             <Card.Title>Share Ticker: {share.shareTicker}</Card.Title>
                             <Card.Text>
-                                Share Number: {share.shareNumber}<br />
+                                Number of Shares: {share.shareNumber}<br />
                                 Share Price: {share.sharePrice}<br />
                                 Asset Value: {share.shareValue}
                             </Card.Text>

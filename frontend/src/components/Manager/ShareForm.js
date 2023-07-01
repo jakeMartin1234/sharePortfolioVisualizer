@@ -68,7 +68,7 @@ const ShareForm =({ onAddShare, shareQuantities }) => {
                             />
                         </Form.Group>
                         <Form.Group controlId="shareNumber">
-                            <Form.Label>Share Number</Form.Label>
+                            <Form.Label>Number of Shares</Form.Label>
                             <Form.Control
                                 type="number"
                                 value={shareQuantity}

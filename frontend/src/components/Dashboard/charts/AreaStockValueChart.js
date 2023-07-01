@@ -15,7 +15,7 @@ const AreaStockValueChart = ({ shareQuantities, shareHistory }) => {
         let newEntry = {};
         newEntry["name"] = elem.date;
         Object.keys(shareQuantities).forEach((share) => {
-            newEntry[share] = elem[share].close.toFixed(2);
+            newEntry[share] = Math.round(elem[share].close * 100) / 100;
         });
         return newEntry;
     });
