@@ -4,7 +4,7 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "443:443"
+      - "3000:3000"
     links:
       - backend
     volumes:
