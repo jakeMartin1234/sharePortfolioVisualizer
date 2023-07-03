@@ -9,3 +9,5 @@ Checkout the video demo [here](https://youtu.be/iyRM1HXFVVA).
 Start the program by running "docker-compose up --build" in the root directory. Look at my 
 [Javscript Fullstack Boilerplate repository](https://github.com/jakeMartin1234/javascript-fullstack-boilerplate) for
 further instructions on how to run/develop the program.
+
+![image](./visualizer-screenshot.png)
