@@ -1,9 +1,11 @@
 # Share Portfolio Visualizer #
 
-This is a website built in ReactJS designed to help you visualize your stock portfolio. It currently requires you
-to manually add in your share portfolio into the program.
+This is a website built in ReactJS designed to help you visualize your stock portfolio. It requires you
+to manually add your share portfolio to the program. It will then fetch the last year of daily trading data for each share
+and create a series of charts made from the data.
 
-The website is intended to be reasonably lightweight and static so the data entered into it does not persist between
-sessions.
+Checkout the video demo [here](https://youtu.be/iyRM1HXFVVA).
 
-Start the program by running "npm start" in the root directory.
+Start the program by running "docker-compose up --build" in the root directory. Look at my 
+[Javscript Fullstack Boilerplate repository](https://github.com/jakeMartin1234/javascript-fullstack-boilerplate) for
+further instructions on how to run/develop the program.
