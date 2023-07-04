@@ -2,9 +2,9 @@ import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 import COLORS from "./Colors";
 
-const PieChartComponent = ({ shareQuantities }) => {
+const PieChartComponent = ({ shareQuantities, chartWidth }) => {
 
-    const width = window.innerWidth * 0.28;
+    const width = window.innerWidth * chartWidth / 100;
     const height = width;
 
     const data = Object.keys(shareQuantities).map((share) => ({

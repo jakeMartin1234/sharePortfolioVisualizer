@@ -1,6 +1,5 @@
 import React from 'react';
-import Container from "react-bootstrap/Container";
-import {Col, Row} from "react-bootstrap";
+import './grid.css';
 import PieChartComponent from "./charts/PieChart";
 import GraphCard from "./GraphCard";
 import AreaStockValueChart from "./charts/AreaStockValueChart";
@@ -29,36 +28,31 @@ const Dashboard = ({shareQuantities, shareHistory}) => {
         )
     } else {
         return (
-            <Container fluid>
-                <Row>
-                    <Col>
-                        <GraphCard title={"Portfolio Composition ($ USD)"}
-                                   chart={<PieChartComponent shareQuantities={shareQuantities}/>}
-                        />
-                    </Col>
-                    <Col>
-                        <GraphCard title={"Share Prices In The Past Year ($ USD)"}
-                                   chart={<AreaStockValueChart shareQuantities={shareQuantities}
-                                                               shareHistory={shareHistory} />}
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <GraphCard title={"% Gain/Loss over the past year"}
-                                   chart={<GainersAndLosers shareQuantities={shareQuantities}
-                                                            shareHistory={shareHistory} />}
-                        />
-                    </Col>
-                    <Col>
-                        <GraphCard title={"Portfolio Value Over Past Year ($ USD)"}
-                                   chart={<WholePortfolioLineChart shareQuantities={shareQuantities}
-                                                                     shareHistory={shareHistory} />}
-                        />
-                    </Col>
-
-                </Row>
-            </Container>
+            <div className={"grid-container"}>
+                <GraphCard title={"Portfolio Composition ($ USD)"}
+                           chart={<PieChartComponent shareQuantities={shareQuantities}
+                                                     chartWidth={19}/>}
+                           width={20}
+                />
+                <GraphCard title={"Share Prices In The Past Year ($ USD)"}
+                           chart={<AreaStockValueChart shareQuantities={shareQuantities}
+                                                       shareHistory={shareHistory}
+                                                       chartWidth={33}/>}
+                           width={34}
+                />
+                <GraphCard title={"% Gain/Loss over the past year"}
+                           chart={<GainersAndLosers shareQuantities={shareQuantities}
+                                                    shareHistory={shareHistory}
+                                                    chartWidth={19}/>}
+                           width={20}
+                />
+                <GraphCard title={"Portfolio Value Over Past Year ($ USD)"}
+                           chart={<WholePortfolioLineChart shareQuantities={shareQuantities}
+                                                           shareHistory={shareHistory}
+                                                           chartWidth={34}/>}
+                           width={35}
+                />
+            </div>
 
         );
     }

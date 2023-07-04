@@ -6,13 +6,17 @@ const date = require('date-and-time');
 const util = require("util");
 require('dotenv').config();
 const app = express()
-const port = 8000
+const port = process.env.PORT || 8000
 
-const corsOpts = {
-    origin: '*'
+// Add the necessary headers to the CORS options
+const corsOptions = {
+    origin: "http://localhost:3000",
+    optionsSuccessStatus: 200,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    methods: ['GET', 'POST'],
 };
 
-app.use(cors(corsOpts));
+app.use(cors(corsOptions));
 app.use(bodyParser.json())
 
 app.post('/', async (req, res) => {

@@ -2,9 +2,9 @@ import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import COLORS from "./Colors";
 
-const AreaStockValueChart = ({ shareQuantities, shareHistory }) => {
+const AreaStockValueChart = ({ shareQuantities, shareHistory, chartWidth }) => {
 
-    const width = window.innerWidth * 0.42;
+    const width = window.innerWidth * chartWidth / 100;
     const height = width * 0.618;
 
     const gradientIds = Object.keys(shareQuantities).map((elem, index) => `color${elem}`);

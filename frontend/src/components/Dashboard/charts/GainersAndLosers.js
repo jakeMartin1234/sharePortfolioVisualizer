@@ -2,9 +2,9 @@ import React from 'react';
 import { BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, Legend } from 'recharts';
 import COLORS from "./Colors";
 
-const GainersAndLosers = ({ shareQuantities, shareHistory }) => {
+const GainersAndLosers = ({ shareQuantities, shareHistory, chartWidth }) => {
 
-    const width = window.innerWidth * 0.35;
+    const width = window.innerWidth * chartWidth / 100;
     const height = width / 2;
 
     // Gain = ((Current Share Price - Initial Share Price) / Initial Share Price) * 100

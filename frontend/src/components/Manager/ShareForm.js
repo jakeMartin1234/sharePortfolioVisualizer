@@ -17,7 +17,8 @@ const ShareForm =({ onAddShare, shareQuantities }) => {
             return;
         }
 
-        const url = `https://share-visualizer-backend-09fa3fd9ff9e.herokuapp.com/`;
+        const url = `https://share-visualizer-backend-d6f8b5522f26.herokuapp.com/`;
+        // const url = `http://localhost:8000/`;
         let response = null;
         try {
             response = await axios.post(url, {
@@ -77,9 +78,12 @@ const ShareForm =({ onAddShare, shareQuantities }) => {
                                 required
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Add Share
-                        </Button>
+                        <div style={{marginTop: "10px"}}>
+                            <Button variant="primary" type="submit">
+                                Add Share
+                            </Button>
+                        </div>
+
                     </Form>
                 </Col>
                     <p style={{color: 'red'}}>
