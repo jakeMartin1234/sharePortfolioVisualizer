@@ -1,9 +1,9 @@
-import './App.css';
 import React, { useState } from 'react';
 import Dashboard from "./components/Dashboard/Dashboard";
 import Manager from "./components/Manager/Manager";
 import Home from "./components/Home";
 import SideBar from "./components/SideBar";
+import Container from "react-bootstrap/Container";
 
 
 
@@ -88,10 +88,10 @@ const App = () => {
     };
 
     return (
-        <div>
+        <Container fluid>
             <SideBar setActiveComponent={setActiveComponent} />
-            <div className="container mt-4">{renderComponent()}</div>
-        </div>
+            {renderComponent()}
+        </Container>
     );
 };
 

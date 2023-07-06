@@ -1,10 +1,11 @@
 import React from 'react';
-import './grid.css';
 import PieChartComponent from "./charts/PieChart";
 import GraphCard from "./GraphCard";
 import AreaStockValueChart from "./charts/AreaStockValueChart";
 import GainersAndLosers from "./charts/GainersAndLosers";
 import WholePortfolioLineChart from "./charts/WholePortfolioLineChart";
+import {Col, Row} from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 
 /*
     This component is the main dashboard component. It is responsible for rendering the charts and surround data.
@@ -28,31 +29,43 @@ const Dashboard = ({shareQuantities, shareHistory}) => {
         )
     } else {
         return (
-            <div className={"grid-container"}>
-                <GraphCard title={"Portfolio Composition ($ USD)"}
-                           chart={<PieChartComponent shareQuantities={shareQuantities}
-                                                     chartWidth={19}/>}
-                           width={20}
-                />
-                <GraphCard title={"Share Prices In The Past Year ($ USD)"}
-                           chart={<AreaStockValueChart shareQuantities={shareQuantities}
-                                                       shareHistory={shareHistory}
-                                                       chartWidth={33}/>}
-                           width={34}
-                />
-                <GraphCard title={"% Gain/Loss over the past year"}
-                           chart={<GainersAndLosers shareQuantities={shareQuantities}
-                                                    shareHistory={shareHistory}
-                                                    chartWidth={19}/>}
-                           width={20}
-                />
-                <GraphCard title={"Portfolio Value Over Past Year ($ USD)"}
-                           chart={<WholePortfolioLineChart shareQuantities={shareQuantities}
-                                                           shareHistory={shareHistory}
-                                                           chartWidth={34}/>}
-                           width={35}
-                />
-            </div>
+            <Container fluid>
+                <Row>
+                    <Col>
+                        <GraphCard title={"Portfolio Composition ($ USD)"}
+                                   chart={<PieChartComponent shareQuantities={shareQuantities}
+                                                             chartWidth={35}/>}
+                                   width={36}
+                        />
+                    </Col>
+                    <Col>
+                        <GraphCard title={"Share Prices In The Past Year ($ USD)"}
+                                   chart={<AreaStockValueChart shareQuantities={shareQuantities}
+                                                               shareHistory={shareHistory}
+                                                               chartWidth={57}/>}
+                                   width={58}
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <GraphCard title={"% Gain/Loss over the past year"}
+                                   chart={<GainersAndLosers shareQuantities={shareQuantities}
+                                                            shareHistory={shareHistory}
+                                                            chartWidth={42}/>}
+                                   width={43}
+                        />
+                    </Col>
+                    <Col>
+                        <GraphCard title={"Portfolio Value Over Past Year ($ USD)"}
+                                   chart={<WholePortfolioLineChart shareQuantities={shareQuantities}
+                                                                   shareHistory={shareHistory}
+                                                                   chartWidth={50}/>}
+                                   width={51}
+                        />
+                    </Col>
+                </Row>
+            </Container>
 
         );
     }

@@ -34,8 +34,7 @@ const WholePortfolioLineChart = ({ shareQuantities, shareHistory, chartWidth }) 
     // console.log(data);
 
     return (
-        <LineChart width={width} height={height} data={data}
-                   margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <LineChart width={width} height={height} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />

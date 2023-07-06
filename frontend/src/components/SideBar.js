@@ -10,7 +10,7 @@ const SideBar = ({ setActiveComponent }) => {
 
     return (
         <Navbar bg="light" expand="lg">
-            <Container>
+            <Container fluid>
                 <Navbar.Brand onClick={() => handleLinkClick('home')}>
                     Share Portfolio Visualizer
                 </Navbar.Brand>

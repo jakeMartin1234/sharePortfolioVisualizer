@@ -18,7 +18,7 @@ const PieChartComponent = ({ shareQuantities, chartWidth }) => {
                 data={data}
                 cx={width/2}
                 cy={height/2}
-                outerRadius={60}
+                outerRadius={Math.min(width, height) / 4}
                 fill="#8884d8"
                 label
             >
