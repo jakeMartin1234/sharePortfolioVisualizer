@@ -42,8 +42,8 @@ const Dashboard = ({shareQuantities, shareHistory}) => {
                         <GraphCard title={"Share Prices In The Past Year ($ USD)"}
                                    chart={<AreaStockValueChart shareQuantities={shareQuantities}
                                                                shareHistory={shareHistory}
-                                                               chartWidth={57}/>}
-                                   width={58}
+                                                               chartWidth={55}/>}
+                                   width={56}
                         />
                     </Col>
                 </Row>
@@ -60,8 +60,8 @@ const Dashboard = ({shareQuantities, shareHistory}) => {
                         <GraphCard title={"Portfolio Value Over Past Year ($ USD)"}
                                    chart={<WholePortfolioLineChart shareQuantities={shareQuantities}
                                                                    shareHistory={shareHistory}
-                                                                   chartWidth={50}/>}
-                                   width={51}
+                                                                   chartWidth={48}/>}
+                                   width={49}
                         />
                     </Col>
                 </Row>
