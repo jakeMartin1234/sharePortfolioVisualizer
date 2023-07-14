@@ -4,6 +4,7 @@ import Manager from "./components/Manager/Manager";
 import Home from "./components/Home";
 import SideBar from "./components/SideBar";
 import Container from "react-bootstrap/Container";
+import {Col, Row} from "react-bootstrap";
 
 
 
@@ -88,10 +89,13 @@ const App = () => {
     };
 
     return (
-        <Container fluid>
+        <div>
             <SideBar setActiveComponent={setActiveComponent} />
-            {renderComponent()}
-        </Container>
+            <Container fluid sx={{ marginTop: '2rem'}}>
+                {renderComponent()}
+            </Container>
+
+        </div>
     );
 };
 

@@ -23,13 +23,13 @@ import Container from "react-bootstrap/Container";
 const Dashboard = ({shareQuantities, shareHistory}) => {
     if (shareHistory.length === 0) {
         return (
-            <div>
+            <div className='centered'>
                 Add shares in "Manager" tab to see visualizations.
             </div>
         )
     } else {
         return (
-            <Container fluid>
+            <div>
                 <Row>
                     <Col>
                         <GraphCard title={"Portfolio Composition ($ USD)"}
@@ -65,7 +65,7 @@ const Dashboard = ({shareQuantities, shareHistory}) => {
                         />
                     </Col>
                 </Row>
-            </Container>
+            </div>
 
         );
     }

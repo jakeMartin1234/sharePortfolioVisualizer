@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {Col, Row} from "react-bootstrap";
-import Container from "react-bootstrap/Container";
 import axios from 'axios';
 
 const ShareForm =({ onAddShare, shareQuantities }) => {
@@ -55,7 +54,7 @@ const ShareForm =({ onAddShare, shareQuantities }) => {
     };
 
     return (
-        <Container fluid>
+        <div style={{ width: '50rem', marginTop: '2rem' }}>
             <Row>
                 <Col>
                     <Form onSubmit={handleSubmit}>
@@ -93,7 +92,7 @@ const ShareForm =({ onAddShare, shareQuantities }) => {
 
             </Row>
 
-        </Container>
+        </div>
 
 
     );

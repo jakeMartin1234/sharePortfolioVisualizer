@@ -1,6 +1,7 @@
 import React from 'react';
 import ShareForm from './ShareForm';
 import ShareStackList from './ShareStackList';
+import Container from "react-bootstrap/Container";
 
 const Manager = ({ shareQuantities, addShareToList }) => {
 
@@ -9,11 +10,14 @@ const Manager = ({ shareQuantities, addShareToList }) => {
     };
 
     return (
-        <div>
+        <Container fluid style={{ display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'}}>
             <ShareStackList shareQuantities={shareQuantities} />
             <ShareForm onAddShare={handleAddShare}
                        shareQuantities={shareQuantities} />
-        </div>
+        </Container>
     );
 };
 
