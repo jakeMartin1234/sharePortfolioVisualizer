@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/share-portfolio-visualizer-frontend/static/css/main.6a62768d.css",
-    "main.js": "/share-portfolio-visualizer-frontend/static/js/main.fd2318f9.js",
-    "index.html": "/share-portfolio-visualizer-frontend/index.html",
-    "main.6a62768d.css.map": "/share-portfolio-visualizer-frontend/static/css/main.6a62768d.css.map",
-    "main.fd2318f9.js.map": "/share-portfolio-visualizer-frontend/static/js/main.fd2318f9.js.map"
+    "main.css": "/jakeMartin1234/sharePortfolioVisualizer/static/css/main.6a62768d.css",
+    "main.js": "/jakeMartin1234/sharePortfolioVisualizer/static/js/main.fd2318f9.js",
+    "index.html": "/jakeMartin1234/sharePortfolioVisualizer/index.html",
+    "main.6a62768d.css.map": "/jakeMartin1234/sharePortfolioVisualizer/static/css/main.6a62768d.css.map",
+    "main.fd2318f9.js.map": "/jakeMartin1234/sharePortfolioVisualizer/static/js/main.fd2318f9.js.map"
   },
   "entrypoints": [
     "static/css/main.6a62768d.css",
