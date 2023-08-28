@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/share-portfolio-visualizer-frontend/static/css/main.6a62768d.css",
+    "main.js": "/share-portfolio-visualizer-frontend/static/js/main.fd2318f9.js",
+    "index.html": "/share-portfolio-visualizer-frontend/index.html",
+    "main.6a62768d.css.map": "/share-portfolio-visualizer-frontend/static/css/main.6a62768d.css.map",
+    "main.fd2318f9.js.map": "/share-portfolio-visualizer-frontend/static/js/main.fd2318f9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a62768d.css",
+    "static/js/main.fd2318f9.js"
+  ]
+}
